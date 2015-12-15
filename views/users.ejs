@@ -1,0 +1,23 @@
+<h3 class='presentacion'>Listado de usuarios</h3>
+
+<div class='listado'>
+    <% if (users) { %>
+        <div class='linea' id='cabeceraLista'>
+            <div class='id'>Id</div>
+            <div class='name'>Nombre</div>
+            <div class='email'>Email</div>
+        </div>
+    <%  // Se recorren los usuarios
+        for(var i=0; i < users.length; i++) { 
+                var user = users[i]; %>
+            <div class='linea'>
+                <div class='id'><%= user.id %></div>
+                <div class='name'><%= user.name %></div>
+                <div class='email'><%= user.email %></div>
+            </div>
+    <%  }
+       } else { %>
+        <div class='linea'>No hay usuarios.</div>
+    <% } %>
+    
+    </div>

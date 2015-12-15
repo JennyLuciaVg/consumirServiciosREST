@@ -1,0 +1,113 @@
+* { 
+	margin: 0;
+	padding: 0;
+}
+
+html { 
+    height:100%;
+}
+
+body {
+	font: 16px arial,verdana,sans-serif,times;
+	background: #003072;
+    height:100%;
+}
+
+#page-wrap {
+	margin: 0px auto;
+	color: #002353;
+	/* background: #FFF; */
+}
+
+/* Esto es equivalente a #page-wrap .main y significa que aplica a la clase main hija del objeto con id page-wrap */
+#page-wrap > .main {
+	/* border: 1px solid #999; */
+	border: 0px;
+	padding: 1%;
+	margin-bottom: 1px;
+	color: #002353;
+	background: #FFF;
+}
+
+/* Esto es equivalente a #page-wrap h2 y significa que aplica a la clase main hija del objeto con id page-wrap */
+#page-wrap h2 {
+	color: #F9B610;
+}
+
+section {
+	min-height: 200px;
+}
+
+section > div {
+	padding: 20px 0px;
+}
+
+header, nav, footer {
+	background: #003072;
+	text-align: center;
+}
+
+.presentacion {
+	text-align: center;
+}
+
+.cabecera {
+	color: #F9B610;
+	background: #003072;
+	padding: 5px 0px;
+}
+
+.cabecera a, .pie a {
+    /* background: #FFDD00; */
+    color: #F9B610;
+}
+
+.cabecera a:hover, .pie a:hover {
+    font-weight: bold;
+}
+
+nav span {
+	padding: 5px 0px;
+}
+
+/* El pie limpia los flotantes y se muestra en bloque, así que ocupa toda la parte inferior de la pantalla. */
+footer {
+	padding: 5px 0px;
+}
+
+.listado {
+	width: 95%;
+	margin: 0px auto;
+}
+
+.linea {
+	padding: 4px 0px;
+	display: block;
+}
+
+/** Estilo para la columna Id **/
+.id {
+	/* float: right; */
+	/* margin: 0px 4px; */
+	text-align: right;
+	/* width: auto; */
+	width: 5%;
+	display: inline-block;
+	padding-right: 10px;
+}
+
+.name {
+	/* float: left; */
+	text-align: left;
+	/* width: 75%; */
+	width: 25%;
+	display: inline-block;
+}
+
+.email {
+	/* float: left; */
+	text-align: left;
+	width: 65%;
+	display: inline-block;
+}
+
