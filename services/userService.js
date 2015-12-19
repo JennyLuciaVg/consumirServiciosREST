@@ -30,6 +30,110 @@ exports.loadUsers = function(next) {
 	});
 };
 
+/**
+ * Función encargada de recuperar los datos de un usuario a partir de su id.
+ */
+exports.loadUser = function(idUser, next) {
+	var path = '/users/' + idUser;
+	
+	var options = {
+		host: host,
+		port: port,
+		path: path,
+		method: 'GET',
+		encoding: null
+	};
+	
+	// Se invoca el servicio RESTful con las opciones configuradas previamente y sin objeto JSON.
+	invocarServicio(options, null, function (user, err) {
+		if (err) {
+			next(null, err);
+		} else {
+			next(user, null);
+		}
+	});
+};
+
+/**
+ * Función encargada de modificar los datos del usuario.
+ */
+exports.editUser = function(idUser, name, email, next) {
+	var path = '/users/' + idUser;
+	// var path = '/users/' + idUser + '?name=' + name + '&email=' + email;
+	
+	var userData = JSON.stringify({
+		"name" : name,
+		"email" : email
+	});
+	
+	var options = {
+		host: host,
+		port: port,
+		path: path,
+		method: 'PUT',
+		encoding: null
+	};
+	
+	// Se invoca el servicio RESTful con las opciones configuradas previamente y sin objeto JSON.
+	invocarServicio(options, userData, function (user, err) {
+		if (err) {
+			next(null, err);
+		} else {
+			next(user, null);
+		}
+	});
+};
+
+/**
+ * Función encargada de eliminar un usuario por su id.
+ */
+exports.deleteUser = function(idUser, next) {
+	var path = '/users/' + idUser;
+	
+	var options = {
+		host: host,
+		port: port,
+		path: path,
+		method: 'DELETE',
+		encoding: null
+	};
+	
+	// Se invoca el servicio RESTful con las opciones configuradas previamente y sin objeto JSON.
+	invocarServicio(options, null, function (user, err) {
+		next(err);
+	});
+};
+
+/**
+ * Función encargada de crear un nuevo usuario con los datos dados.
+ */
+exports.createUser = function(name, email, next) {
+	var path = '/users';
+	// var path = '/users?name=' + name + '&email=' + email;
+	
+	var userData = JSON.stringify({
+		"name" : name,
+		"email" : email
+	});
+	
+	var options = {
+		host: host,
+		port: port,
+		path: path,
+		method: 'POST',
+		encoding: null
+	};
+	
+	// Se invoca el servicio RESTful con las opciones configuradas previamente y sin objeto JSON.
+	invocarServicio(options, userData, function (user, err) {
+		if (err) {
+			next(null, err);
+		} else {
+			next(user, null);
+		}
+	});
+};
+
 
 
 /**

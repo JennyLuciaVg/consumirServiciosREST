@@ -107,7 +107,13 @@ footer {
 .email {
 	/* float: left; */
 	text-align: left;
-	width: 65%;
+	width: 35%;
 	display: inline-block;
 }
 
+.acciones {
+	/* float: left; */
+	text-align: left;
+	width: 30%;
+	display: inline-block;
+}

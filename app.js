@@ -11,6 +11,9 @@ var users = require('./routes/users');
 // Importar express-partial como marco de decoración
 var partials = require('express-partials');
 
+// importar method-override para poder usar métodos PUT y DELETE
+var methodOverride = require('express-method-override');
+
 var app = express();
 
 // view engine setup
@@ -26,6 +29,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+// Utilizar methodOverride para poder utilizar más métodos en los forms aparte de GET y POST
+app.use(methodOverride('_method'));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);

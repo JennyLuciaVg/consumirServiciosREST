@@ -1,0 +1,12 @@
+<h3 class='presentacion'>Datos del usuario</h3>
+
+<div class='listado'>
+    <div class='linea' id='cabeceraLista'>
+        <div class='id'>Id</div>
+        <div class='name'>Nombre</div>
+        <div class='email'>Email</div>
+    </div>
+    <form id='userData' action='/users/newUser' method='POST'>
+        <% include _userForm.ejs %>
+    </form>
+</div>

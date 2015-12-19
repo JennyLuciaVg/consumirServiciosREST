@@ -1,0 +1,17 @@
+<h3 class='presentacion'>Datos del usuario</h3>
+
+<div class='listado'>
+    <% if (user && user.id) { %>
+        <div class='linea' id='cabeceraLista'>
+            <div class='id'>Id</div>
+            <div class='name'>Nombre</div>
+            <div class='email'>Email</div>
+        </div>
+        <form id='userData' action='/users/<%= user.id %>' method='POST'>
+            <input type='hidden' name='_method' value='PUT'/>
+            <% include _userForm.ejs %>
+        </form>
+    <% } else { %>
+        <div class='linea'>No hay ningún usuario con el id dado.</div>
+    <% } %>
+</div>

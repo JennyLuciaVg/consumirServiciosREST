@@ -6,6 +6,7 @@
             <div class='id'>Id</div>
             <div class='name'>Nombre</div>
             <div class='email'>Email</div>
+            <div class='acciones'>Acciones</div>
         </div>
     <%  // Se recorren los usuarios
         for(var i=0; i < users.length; i++) { 
@@ -14,10 +15,14 @@
                 <div class='id'><%= user.id %></div>
                 <div class='name'><%= user.name %></div>
                 <div class='email'><%= user.email %></div>
+                <div class='acciones'>
+                    <a href='/users/<%= user.id %>'>Editar</a>
+                    <a href='/users/<%= user.id %>?_method=DELETE'>Eliminar</a>
+                </div>
             </div>
     <%  }
        } else { %>
         <div class='linea'>No hay usuarios.</div>
     <% } %>
-    
+        <div class='linea'><a href='/users/newUser'>Crear usuario</a></div>
     </div>
