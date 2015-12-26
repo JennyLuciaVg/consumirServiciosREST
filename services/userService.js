@@ -154,7 +154,7 @@ function invocarServicio(options, jsonObject, next) {
 			data += chunk;
 		}).on('end', function () {
 			// Al terminar de recibir datos los procesamos
-			var response = null;
+			var response = data;
 			
 			// Nos aseguramos de que sea tipo JSON antes de convertirlo.
 			if (contentType.indexOf('application/json') != -1) {
