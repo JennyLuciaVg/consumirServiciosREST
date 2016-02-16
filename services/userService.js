@@ -124,7 +124,7 @@ exports.createUser = function(name, email, next) {
 		encoding: null
 	};
 	
-	// Se invoca el servicio RESTful con las opciones configuradas previamente y sin objeto JSON.
+	// Se invoca el servicio RESTful con las opciones configuradas previamente y con los datos del usuario.
 	invocarServicio(options, userData, function (user, err) {
 		if (err) {
 			next(null, err);

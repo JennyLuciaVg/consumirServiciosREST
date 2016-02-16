@@ -5,7 +5,7 @@ var userController = require('../controllers/userController');
 /* GET users listing. */
 router.get('/', userController.listUsers);
 
-/* GET user by id and load it. */
+/* GET to show the newUser form. */
 router.get('/newUser', userController.newUser);
 
 /* POST user by id and save changes. */
